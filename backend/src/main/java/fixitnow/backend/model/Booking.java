@@ -1,0 +1,52 @@
+package fixitnow.backend.model;
+
+import jakarta.persistence.*;
+import lombok.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import fixitnow.backend.enums.BookingStatus;
+
+@Entity
+@Table(name = "bookings")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Booking {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "service_id", nullable = false)
+    private ServiceProvider service;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_id", nullable = false)
+    private User customer;
+
+    @ManyToOne
+    @JoinColumn(name = "provider_id", nullable = false)
+    private User provider;
+
+    private LocalDate bookingDate;
+
+    private String timeSlot;
+
+    @Enumerated(EnumType.STRING)
+    @Builder.Default
+    private BookingStatus status = BookingStatus.PENDING;
+
+    @Builder.Default
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    @Builder.Default
+    private Boolean providerMarkedComplete = false; // provider marks completed
+    @Builder.Default
+    private Boolean customerVerified = false; 
+
+    
+}
+
