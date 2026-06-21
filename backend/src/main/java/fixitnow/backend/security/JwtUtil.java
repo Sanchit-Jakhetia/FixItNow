@@ -15,6 +15,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 import java.util.Date;
 
@@ -32,7 +34,25 @@ public class JwtUtil {
 
     @PostConstruct
     void initializeKey() {
-        key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+        if (secret == null || secret.isBlank()) {
+            throw new IllegalStateException("JWT secret is missing. Set JWT_SECRET in backend/.env or the environment.");
+        }
+
+        String normalizedSecret = secret.trim();
+        byte[] secretBytes = normalizedSecret.getBytes(StandardCharsets.UTF_8);
+        if (secretBytes.length < 32) {
+            secretBytes = sha256(secretBytes);
+        }
+
+        key = Keys.hmacShaKeyFor(secretBytes);
+    }
+
+    private byte[] sha256(byte[] value) {
+        try {
+            return MessageDigest.getInstance("SHA-256").digest(value);
+        } catch (NoSuchAlgorithmException e) {
+            throw new IllegalStateException("SHA-256 is not available for JWT key derivation.", e);
+        }
     }
 
     // ---------------- JWT Methods ---------------- //
@@ -106,4 +126,3 @@ public User getUserFromToken(String token) {
 }
 
 }
-

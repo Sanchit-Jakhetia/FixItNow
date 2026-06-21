@@ -180,7 +180,7 @@ export default function Registration() {
               </div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white">Create your account</h2>
               <p className="mt-3 max-w-md text-sm leading-6 text-white/80">
-                Join LocalFixConnect as a customer or provider and keep everything from registration to booking in one consistent flow.
+                Join FixItNow as a customer or provider and keep everything from registration to booking in one consistent flow.
               </p>
             </div>
 

@@ -191,7 +191,7 @@ export default function AdminDashboard() {
             </div>
             <div>
               <div className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">Admin dashboard</div>
-              <h1 className="text-2xl font-semibold tracking-tight text-slate-900">LocalFixConnect Control Center</h1>
+              <h1 className="text-2xl font-semibold tracking-tight text-slate-900">FixItNow Control Center</h1>
             </div>
           </div>
 

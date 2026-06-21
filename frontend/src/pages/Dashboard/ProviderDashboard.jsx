@@ -388,7 +388,7 @@ export default function ProviderDashboard() {
               <FiHome className="text-2xl" />
             </span>
             <span>
-              <span className="block text-sm font-medium uppercase tracking-[0.24em] text-slate-500">LocalFixConnect</span>
+              <span className="block text-sm font-medium uppercase tracking-[0.24em] text-slate-500">FixItNow</span>
               <span className="block text-lg font-semibold text-slate-900">Provider Hub</span>
             </span>
           </button>

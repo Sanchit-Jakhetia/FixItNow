@@ -130,7 +130,7 @@ export default function Login() {
           <div className="rounded-[1.75rem] border border-white/20 bg-white/10 p-6 backdrop-blur-xl shadow-[0_24px_80px_rgba(15,23,42,0.18)]">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-sm font-medium text-white/90 ring-1 ring-white/20">
               <span className="h-2 w-2 rounded-full bg-emerald-300" />
-              LocalFixConnect secure access
+              FixItNow secure access
             </div>
 
             <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white">Welcome back</h2>
@@ -163,12 +163,12 @@ export default function Login() {
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-sm font-semibold text-[#1d4ed8]">
             <span className="h-2 w-2 rounded-full bg-[#1d4ed8]" />
-            Welcome back to LocalFixConnect
+            Welcome back to FixItNow
           </div>
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">Sign in to your account</h1>
             <p className="mt-3 max-w-2xl text-lg leading-7 text-slate-500">
-              Use your email and password to continue to LocalFixConnect.
+              Use your email and password to continue to FixItNow.
             </p>
           </div>
         </motion.div>

@@ -69,7 +69,7 @@ const HomePage = ({ customer, onExploreClick }) => {
               <FiMapPin className="text-2xl" />
             </span>
             <span>
-              <span className="block text-sm font-semibold uppercase tracking-[0.24em] text-[#1d4ed8]">LocalFixConnect</span>
+              <span className="block text-sm font-semibold uppercase tracking-[0.24em] text-[#1d4ed8]">FixItNow</span>
               <span className="block text-lg font-semibold text-slate-900">Smart Home Services</span>
             </span>
           </Link>
